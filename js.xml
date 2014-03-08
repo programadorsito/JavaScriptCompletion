@@ -1,0 +1,258 @@
+<object name='element' help='element'>
+	<member name='accessKey' completion='accessKey' help='Sets or returns the accesskey for an element' return='string'>
+	<member name='id' completion='id' help='set or return the id of the element' return='string'>
+</object>
+
+<object name='document' help='document'>
+	<member name='body' completion='body' help='body of the page' return='string'>
+	<member name='cookie' completion='cookie' help='dict with all cookies of the page' return='dict'>
+	<member name='doctype' completion='doctype' help='type of the document for know how interpreted it' return='string'>
+	<member name='createAttribute' completion='createAttribute("${1:attribute}")' help='create and individual attribute of any tag' return='attr'>
+</object>
+<object name='attr' help='an attribute of a tag'>
+	<member name='charAt' completion='charAt(${1:number})' help='char in that position' return='attr'>	
+	<member name='slice' completion='slice(${1:begin}, ${2:end})' help='part of the string (don`t take the last)' return='string'>
+</object>
+<object name='string' help='a set of characters'>
+	<member name='charAt' completion='charAt(${1:number})' help='char in that position' return='string'>	
+	<member name='slice' completion='slice(${1:begin}, ${2:end})' help='part of the string (don`t take the last)' return='string'>
+</object>
+
+<object name='number' help='number'>
+	<member name='MAX_VALUE' completion='MAX_VALUE' help='the max value of any number can take' return='number'>
+	<member name='MIN_VALUE' completion='MIN_VALUE' help='the most low value of any number can take' return='number'>
+	<member name='NEGATIVE_INFINITE' completion='NEGATIVE_INFINITE' help='when number thend to very low value' return='number'>
+	<member name='POSITIVE_INFINITE' completion='POSITIVE_INFINITE' help='when number thend to very hight value' return='number'>
+	<member name='NaN' completion='NaN' help='not at number' return='number'>
+	<member name='toExponential' completion='toExponential()' help='convert number to standar e format' return='string'>
+	<member name='toFixed' completion='toFixed(${1:x})' help='number of decimal point' return='string'>
+	<member name='toPrecision' completion='toPrecision(${1:x})' help='number of significant digits' return='string'>
+	<member name='toString' completion='toString()' help='string representation of number' return='string'>
+	<member name='valueOf' completion='valueOf()' help='value of number object' return='number'>
+	<member name='constructor' completion='constructor' help='function for create number object' return='function'>
+	<member name='prototype' completion='prototype' help='allow add properties to an number object' return='number'>
+</object>
+
+<object name='navigator' help='navigator'>
+	<member name='appCodeName' completion='appCodeName' help='code name of the browser' return='string'>
+	<member name='appName' completion='appName' help='name of the browser' return='string'>
+	<member name='cookieEnabled' completion='cookieEnabled' help='browser let save cookies?' return='boolean'>
+	<member name='language' completion='language' help='language of the browser' return='string'>
+	<member name='onLine' completion='onLine' help='check if have internet' return='boolean'>
+	<member name='platform' completion='platform' help='platform in where browser is executed' return='string'>
+	<member name='product' completion='product' help='engine base of the browser' return='string'>
+	<member name='userAgent' completion='userAgent' help='browser information' return='string'>
+	<member name='javaEnabled' completion='javaEnabled()' help='true if java is enabled in the browser' return='boolean'>
+</object>
+
+<object name='screen' help='screen'>
+	<member name='width' completion='width' help='width of the screen in pixels' return='number'>
+	<member name='height' completion='height' help='height of the screen in pixels' return='number'>
+</object>
+
+<object name='location' help='location'>
+	<member name='pathname' completion='pathname' help='path of the page after the hostname' return='string'>
+	<member name='host' completion='host' help='name of the host' return='string'>
+
+</object>
+
+<object name='window' help='window'>
+	<member name='confirm' completion='confirm(${1:string})' help='show a ok_cancel dialog' return='boolean'>
+	<member name='prompt' completion='prompt(${1:string})' help='input dialog' return='string'>
+	<member name='alert' completion='alert(${1:})' help='show a message'>
+	<member name='blur' completion='blur()' help='remove focus from the window'>
+	<member name='focus' completion='focus()' help='window take t he focus'>
+	<member name='createPopup' completion='blur()' help='popup window' return='object'>
+	<member name='resizeTo' completion='resizeTo(${1:x}, ${2:y})' help='change size the window to x, y pixels'>
+	<member name='resizeBy' completion='resizeBy(${1:x}, ${2:y})' help='change size the window x, y amount'>	
+	<member name='moveTo' completion='moveTo(${1:x}, ${2:y})' help='move the window to the x, y position'>
+	<member name='moveBy' completion='moveBy(${1:x}, ${2:y})' help='move the window to x, y pixels'>
+	<member name='scrollTo' completion='scrollTo(${1:x}, ${2:y})' help='apply scroll to the x, y position in document'>
+	<member name='scrollBy' completion='scrollBy(${1:x}, ${2:y})' help='apply x, y scroll amount'>
+	<member name='stop' completion='stop()' help='stop loading the page'>
+	<member name='scrollBy' completion='scrollBy(${1:x}, ${2:y})' help='apply x, y scroll amount'>
+	<member name='setInterval' completion='setInterval(${1:function}, ${2:time})' help='call the function each interval of time' return='number'>
+	<member name='setTimeout' completion='setTimeout(${1:function}, ${2:time})' help='call the function after specific time' return='number'>
+	<member name='print' completion='print()' help='print the content of the window'>
+	<member name='open' completion='open(${1:})' help='open a window' return='window'>
+		<param name='URL' pos='1' completion='"http://${1:}"' help='specific a url'>
+		<param name='blank' pos='2' completion='"_blank"' help='open in a new window'>
+		<param name='parent' pos='2' completion='"_parent"' help='is loading into parent frame'>
+		<param name='self' pos='2' completion='"_self"' help='replace the current page'>
+		<param name='width' pos='3' completion='width=${1:},' help='is loading in parent frame'>
+		<param name='status' pos='3' completion='status=${1:1|0},' help='add status bar'>
+		<param name='scrollbars' pos='3' completion='scrollbars=${1:1|0},' help='add scrollbars'>
+		<param name='resizable' pos='3' completion='resizable=${1:1|0},' help='let change the size'>
+		<param name='replace' pos='4' completion='true|false' help='create new entry in the history list or replace the current'>
+</object>
+
+<object name='http' help='http'>
+	<member name='createserver' completion='createServer(function(req, res){${1:}})' help='create a new server' return='http.server'>
+</object>
+
+<object name='os' help='information about O.S'>
+	<member name='tmpdir' completion='tmpdir()' help='default directory for temp files' return='string'>
+	<member name='tmpdir' completion='tmpdir()' help='default directory for temp files' return='string'>
+	<member name='hostname' completion='hostname()' help='name of the server' return='string'>
+</object>
+
+<object name='http.server' help='server'>
+	<member name='listen' completion='listen(${1:port})' help='listen the server port'>
+	<member name='close' completion='close(${1:})' help='stop the server'>
+</object>
+
+
+<object name='console' help='console'>
+	<member name='log' completion='log(${1:message})' help='print the message'>
+	<member name='error' completion='error(${1:})' help='show a message like an error'>
+	<member name='info' completion='info(${1:})' help='print the message'>
+	<member name='warn' completion='warn(${1:})' help='show a message like a warnig'>
+	<member name='dir' completion='dir(${1:obj})' help='show a message that represent the object'>
+	<member name='time' completion='time(${1:label})' help='begin to record the section'>
+	<member name='timeEnd' completion='timeEnd(${1:label})' help='finist to record the section and return the time passed' return='string'>
+	<member name='trace' completion='trace(${1:label})' help='print stack trace of the stderr'>
+	<member name='asert' completion='asert(${1:expression}, ${2:message})' help='check for the expression'>
+</object>
+
+<object name='process' help='process'>
+	<member name='uptime' completion='uptime()' help='time take by process since begin' return='number'>
+	<member name='hrtime' completion='hrtime()' help='time in seconds and nanoseconds take by the process' return='array'>
+	<member name='nextTick' completion='nextTick(function(){${1:}})' help='next mark, call before any I/O event happen'>
+	<member name='maxTickDepth' completion='maxTickDepth' help='show many calls before let ocurr a I/O Event' return='number'>
+	<member name='memoryUsage' completion='memoryUsage' help='memory in bytes usage by the process' return='number'>
+	<member name='stdout' completion='stdout' help='strem for out' return='stream'>
+	<member name='stdin' completion='stdin' help='strem for in' return='stream'>
+	<member name='stderr' completion='stderr' help='strem for error' return='stream'>
+	<member name='argv' completion='argv' help='array with arguments' return='array'>
+	<member name='execPath' completion='execPath' help='path where is node.exe' return='string'>
+	<member name='abort' completion='abort();' help='finish inmediatly the process'>
+	<member name='exit' completion='exit(${1:code});' help='finih the process'>
+	<member name='chdir' completion='chdir("${1:path}");' help='change the working directory'>
+	<member name='cwd' completion='cwd()' help='current working directory' return='string'>
+	<member name='env' completion='env' help='dictionary with the enviroments variables' return='dict'>
+	<member name='getgid' completion='getgid()' help='the group id of process' return='number'>
+	<member name='setgid' completion='setgid(${1:number})' help='the group id of process'>
+	<member name='getuid' completion='getuid()' help='the user id of process' return='number'>
+	<member name='setuid' completion='setuid(${1:number})' help='the user id of process'>
+	<member name='getgroups' completion='getgroups()' help='array with all groups of process' return='array'>
+	<member name='initgroups' completion='initgroups(${1:userid}, ${2:groupid})' help='init those process'>
+	<member name='version' completion='version' help='version of nodejs' return='string'>
+	<member name='versions' completion='versions' help='dictionary versions of different components of node js' return='dict'>
+	<member name='config' completion='config' help='dictionary with configurations of node js' return='dict'>
+	<member name='kill' completion='kill(${1:pid})' help='kill the process with the specific pid'>
+	<member name='pid' completion='pid' help='the identifier of the process' return='number'>
+	<member name='arch' completion='arch' help='in what arquitecture the process is runnig' return='string'>
+	<member name='platform' completion='platform' help='in what platform the process is runnig' return='string'>
+</object>
+
+
+<object name='Math' help='math functions and constans'>
+	<member name='E' completion='E' help='Euler number (2.718)' return='number'>
+	<member name='LN2' completion='LN2' help='natural logarithm of 2' return='number'>
+	<member name='LN10' completion='LN10' help='natural logarithm of 10' return='number'>
+	<member name='LOG2E' completion='LOG2E' help='log of E in base-2' return='number'>
+	<member name='LOG10E' completion='LOG10E' help='log of E in base-10' return='number'>
+	<member name='PI' completion='PI' help='PI number (3.14)' return='number'>
+	<member name='SQRT1_2' completion='SQRT1_2' help='square root of 0.5' return='number'>
+	<member name='SQRT2' completion='SQRT2' help='square root of 2' return='number'>
+	<member name='abs' completion='abs' help='absolute value' return='number'>
+	<member name='acos' completion='acos(${1:x})' help='arc cos of x in radians' return='number'>
+	<member name='atan' completion='atan(${1:x})' help='arc tan of x in radians' return='number'>
+	<member name='atan2' completion='atan2(${1:x})' help='angle of (x, y) point inradians' return='number'>
+	<member name='ceil' completion='ceil(${1:x})' help='most low integer major than x' return='number'>
+	<member name='cos' completion='cos(${1:r})' help='cosine of r in radians' return='number'>
+	<member name='sin' completion='sin(${1:r})' help='sin of r in radians' return='number'>
+	<member name='tan' completion='tan(${1:r})' help='tan of r in radians' return='number'>
+	<member name='sqrt' completion='sqrt(${1:x})' help='square root of x' return='number'>
+	<member name='exp' completion='exp(${1:})' help='return e^x' return='number'>
+	<member name='floor' completion='floor(${1:})' help='most near integer less than x' return='number'>
+	<member name='log' completion='log(${1:})' help='log base-e of x' return='number'>
+	<member name='max' completion='max(${1:}, ${2:}, ${3:n})' help='most higth value' return='number'>
+	<member name='min' completion='min(${1:}, ${2:}, ${3:n})' help='most lower value' return='number'>
+	<member name='pow' completion='pow(${1:x}, ${2:y})' help='x^y' return='number'>
+	<member name='random' completion='random()' help='random number between 0 and 1' return='number'>
+	<member name='round' completion='round(${x})' help='most near integer' return='number'>
+</object>
+
+<object name='array' help='set of values'>
+	<member name='length' completion='length' help='capacity of the array' return='number'>
+	<member name='concat' completion='concat(${1:array})' help='join current with passed array and return it' return='array'>
+	<member name='lastIndexOf' completion='lastIndexOf(${1:x})' help='return the last appear of element' return='number'>
+	<member name='pop' completion='pop()' help='remove last element and return it'>
+	<member name='push' completion='push(${1:})' help='add new element in last and return new size' return='number'>
+	<member name='reverse' completion='reverse()' help='current array in reverse order' return='array'>
+	<member name='shift' completion='shift()' help='remove firt element and return it'>
+	<member name='unshift' completion='unshift(${1:})' help='add element in firt position and return new size'>
+	<member name='slice' completion='slice(${1:x}, ${2:y})' help='part of array don`t include the last' return='array'>
+	<member name='sort' completion='sort()' help='sorts the elements of current array' return='array'>
+	<member name='splice' completion='splice(${1:x}, ${2:y}, ${3:elements})' help='add and remove elements' return='array cut'>
+	<member name='toString' completion='toString()' help='string representation of array' return='string'>
+	<member name='valueOf' completion='valueOf()' help='value of array' return='array'>
+	<member name='constructor' completion='constructor' help='function for create arrays' return='function'>
+	<member name='prototype' completion='prototype' help='allow add properties to an array object' return='array'>
+</object>
+
+<object name='Boolean' help='object that can take true or false'>
+	<member name='toString' completion='toString()' help='string representation of Boolean' return='string'>
+	<member name='valueOf' completion='valueOf()' help='value of Boolean object' return='Boolean'>
+	<member name='constructor' completion='constructor' help='function for create Boolean object' return='function'>
+	<member name='prototype' completion='prototype' help='allow add properties to an Boolean object' return='Boolean'>
+</object>
+
+<object name='Date' help='object for know time and date'>
+	<member name='getDate' completion='getDate()' help='day of month from 1-31' return='number'>
+	<member name='getDay' completion='getDay()' help='day of week from 0-6' return='number'>
+	<member name='getFullYear' completion='fullYear()' help='year four digits' return='number'>
+	<member name='getHours' completion='getHours()' help='hour from 0-23' return='number'>
+	<member name='getMilliseconds' completion='getMilliseconds()' help='millisenconds from 0-999' return='number'>
+	<member name='getMinutes' completion='getMinutes()' help='minute of hour from 0-59' return='number'>
+	<member name='getMonth' completion='getMonth()' help='month of year 0-11' return='number'>
+	<member name='getSeconds' completion='getSeconds()' help='seconds of minute from 0-59' return='number'>
+	<member name='setDate' completion='setDate()' help='day of month from 1-31' return='number'>
+	<member name='setFullYear' completion='setFullYear()' help='year four digits' return='number'>
+	<member name='setHours' completion='setHours()' help='hour from 0-23' return='number'>
+	<member name='setMilliseconds' completion='setMilliseconds()' help='millisenconds from 0-999' return='number'>
+	<member name='setMinutes' completion='setMinutes()' help='minute of hour from 0-59' return='number'>
+	<member name='setMonth' completion='setMonth()' help='month of year 0-11' return='number'>
+	<member name='setSeconds' completion='setSeconds()' help='seconds of minute from 0-59' return='number'>
+	<member name='setTime' completion='setTime()' help='milliseconds since unix epoc' return='number'>
+	<member name='setUTCDate' completion='setUTCDate()' help='day of month from 1-31 according with universal time' return='number'>
+	<member name='setUTCFullYear' completion='setUTCFullYear()' help='year four digits according with universal time' return='number'>
+	<member name='setUTCHours' completion='setUTCHours()' help='hour from 0-23 according with universal time' return='number'>
+	<member name='setUTCMilliseconds' completion='setUTCMilliseconds()' help='millisenconds from 0-999 according with universal time' return='number'>
+	<member name='setUTCMinutes' completion='setUTCMinutes()' help='minute of hour from 0-59 according with universal time' return='number'>
+	<member name='setUTCMonth' completion='setUTCMonth()' help='month of year 0-11 according with universal time' return='number'>
+	<member name='setUTCSeconds' completion='setUTCSeconds()' help='seconds of minute from 0-59 according with universal time' return='number'>
+	<member name='getUTCDate' completion='getDate()' help='day of month from 1-31 according with universal time' return='number'>
+	<member name='getUTCDay' completion='getDay()' help='day of week from 0-6 according with universal time' return='number'>
+	<member name='getUTCFullYear' completion='fullYear()' help='year four digits according with universal time' return='number'>
+	<member name='getUTCHours' completion='getHours()' help='hour from 0-23 according with universal time' return='number'>
+	<member name='getUTCMilliseconds' completion='getMilliseconds()' help='millisenconds from 0-999 according with universal time' return='number'>
+	<member name='getUTCMinutes' completion='getMinutes()' help='minute of hour from 0-59 according with universal time' return='number'>
+	<member name='getUTCMonth' completion='getMonth()' help='month of year 0-11 according with universal time' return='number'>
+	<member name='getUTCSeconds' completion='getSeconds()' help='seconds of minute from 0-59 according with universal time' return='number'>
+	<member name='getUTCTime' completion='getTime()' help='seconds sicne unix epoc according with universal time' return='number'>
+	<member name='getTimezoneOffset' completion='getTimezoneOffset()' help='difference between time UTC and local time, in minutes' return='number'>
+	<member name='parse' completion='parse(${1:string})' help='convert date string to millisencods since unix epoc' return='number'>
+	<member name='toISOString' completion='toISOString()' help='string date in ISO format' return='string'>
+	<member name='toLocaleDateString' completion='toLocaleDateString()' help='string date using local convetions xx/xx/xx' return='string'>
+	<member name='toLocaleTimeString' completion='toLocaleTimeString()' help='string Time using local convetions xx:xx:xx' return='string'>
+	<member name='toLocaleString' completion='toLocaleString()' help='string using local convetions xx/xx/xx xx:xx:xx' return='string'>
+	<member name='toJSON' completion='toJSON()' help='string date in JSON format' return='string'>
+	<member name='UTC' completion='UTC()' help='millisenconds since uni epoc' return='number'>
+	<member name='toDateString' completion='toDateString()' help='string readable of date' return='string'>
+	<member name='toTimeString' completion='toTimeString()' help='string representation of time' return='string'>
+	<member name='toUTCString' completion='toUTCString()' help='string representation of universal date' return='string'>
+	<member name='toString' completion='toString()' help='string representation of Date' return='string'>
+	<member name='valueOf' completion='valueOf()' help='value of date object' return='date'>
+	<member name='constructor' completion='constructor' help='function for create date object' return='function'>
+	<member name='prototype' completion='prototype' help='allow add properties to an date object' return='date'>
+</object>
+
+<global name='typeof' completion='typeof(${1:})' help='type of variable' return='string'>
+<global name='Array' completion='Array(${1:})' help='create a new array' return='array'>
+<global name='eval' completion='eval("${1:}")' help='eval the expression' return='string'>
+<global name='clearTimeout' completion='clearTimeout(${1:t});' help='stop the timeout'>
+<global name='clearInterval' completion='clearInterval(${1:t});' help='stop to call the function'>
+<global name='setInmediate' completion='setInmediate(${1:function});' help='exec function immediatly'>
+<global name='clearTimeout' completion='clearTimeout(${1:t});' help='stop the timeout'>
